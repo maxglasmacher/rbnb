@@ -1,0 +1,58 @@
+.video-banner{
+  position: relative !important;
+    overflow: hidden;
+  height: 100vh;
+  .video iframe{
+    height: 100vh;
+    width:100vw;
+      transform:scale(1.7);
+  }
+}
+
+
+.video-overlay{
+  position:absolute;
+  background-color: rgba(0,0,0,0.6);
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: -1;
+ }
+
+
+
+.logo{
+  border: 2px solid #CBA06A;
+ border: 2px solid #CBA06A;
+box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+  width: 800px;
+
+h3 {
+font-family: Josefin Sans;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+font-size: 24px;
+text-align: center;
+letter-spacing: 0.02em;
+color: #CBA06A;
+}
+h1 {
+
+font-family: Josefin Sans;
+font-style: normal;
+font-weight: 100;
+line-height: normal;
+font-size: 72px;
+text-align: center;
+letter-spacing: 0.08em;
+
+color: #BEA261;
+}
+
+}

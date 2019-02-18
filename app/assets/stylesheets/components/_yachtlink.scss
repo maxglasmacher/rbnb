@@ -1,0 +1,13 @@
+.yacht-link{
+    text-decoration: none;
+    color: #A0A9B8;
+    font-family: 'josefin_sanssemibold', Arial, sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+     &:hover{
+          color: #B9874C;
+          text-decoration:none;
+    }
+  }
