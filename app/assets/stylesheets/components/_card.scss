@@ -122,8 +122,10 @@
 
 // }
 
+
 .btn-card{
   position: absolute;
+
   display: inline-block;
   color:  #CA9E6A;
   background-color: transparent;
@@ -135,6 +137,7 @@
   border-radius: 5px;
   border: 1px solid rgba(255,255,255,0.7);
   border-bottom-width: 3px;
+
      margin-top: 19px;
 
     margin-left: 33px;
@@ -142,15 +145,21 @@
 
 .btn-card:hover {
 
+
     border-color: rgba(1,1,1,0.3);
     text-decoration: none;
     border: 1px solid #CBA06A;
+
     color:grey;
       opacity: 1;
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
           text-decoration: none;
+
   }
+}
+
+
 
 .card-body {
 
