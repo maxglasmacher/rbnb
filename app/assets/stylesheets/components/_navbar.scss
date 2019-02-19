@@ -15,26 +15,22 @@
   position:fixed;
   width:100%;
 }
-
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
 }
-
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
 }
-
 /* Right section */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
@@ -46,15 +42,16 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: white;
+  opacity: 0.6;
   opacity: 0.8;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
+  color: #CBA06A;
   color: #CA9E6A;
   text-decoration: none;
 
 }
-
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
