@@ -1,12 +1,44 @@
-<h1>Yachts list</h1>
-<ul>
-  <% @yachts.each do |yacht| %>
-    <li>
-      <%= yacht.name %>
-      <%= yacht.description %>
-      <%= yacht.price_per_day %>
-      <%= cl_image_tag yacht.photo, height: 300, width: 400, crop: :fill %>
-      <%= yacht.user.email %>
-    </li>
-  <% end %>
-</ul>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.5) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1444665317802-08aa1d89c10c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
+    <div class="logo">
+      <div>
+        <h3>N˚1</h3>
+        <h1>Yacht Sqaure</h1>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="vertical-text">YACHTS</h1>
+
+<div class="container">
+  <!-- <div class="wrapper"> -->
+    <div class="row">
+       <% @yachts.each do |yacht| %>
+       <div class="col-xs-12  col-md-6 ">
+        <div class="big-card">
+        <div class="card" style="background-image: url('<%= cl_image_path yacht.photo, height: 500, crop: :fit %>')">
+          <div class="">
+            <div class="square">
+         <div class="card-body">
+              <h2>  <%= yacht.name %></h2>
+
+              <div class="info">
+                <h3><%= yacht.price_per_day %> $ per night</h3>
+                           <a href="<%= yacht_path(yacht) %>" class="btn-card">Details</a>
+              </div>
+
+         </div>
+         </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    <%end %>
+    </div>
+<!--   </div> -->
+</div>
+
+
+  </div>
+</div>
+ -->
