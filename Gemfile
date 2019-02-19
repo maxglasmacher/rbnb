@@ -18,6 +18,8 @@ gem 'webpacker'
 
 gem 'devise'
 
+gem "pundit"
+
 gem 'faker', '~> 1.9.2'
 
 gem 'dotenv-rails', groups: [:development, :test]
