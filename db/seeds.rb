@@ -1,8 +1,9 @@
 require "faker"
 
 Booking.delete_all
-User.delete_all
 Yacht.delete_all
+User.delete_all
+
 
 puts 'Creating 10 fake yachts/users...'
 10.times do
