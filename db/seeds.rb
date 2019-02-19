@@ -10,11 +10,11 @@ puts 'Creating 10 fake yachts/users...'
   url_yacht = "https://source.unsplash.com/collection/4284591/480x480"
   user = User.new(
     email: Faker::Internet.email,
-    encrypted_password: Faker::String.random(7..12)
+    password: Faker::String.random(7..12)
   )
   user.remote_photo_url = url_user
   user.save!
-  yacht = User.new(
+  yacht = Yacht.new(
     name: Faker::Name.name,
     description: Faker::GreekPhilosophers.quote,
     price_per_day: rand(1_000..10_000)
