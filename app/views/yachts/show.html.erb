@@ -6,3 +6,10 @@
   <%= @yacht.user.email %>
 <%= link_to "Back to list", yachts_path %>
 
+<% if policy(@yacht).edit? %>
+  <%= link_to "Edit", edit_yacht_path(@yacht) %>
+<% end %>
+<% if policy(@yacht).destroy? %>
+  <%= link_to "Delete", yacht_path(@yacht), method: "delete" %>
+<% end %>
+
