@@ -1,5 +1,6 @@
 .btn-yours{
  display: inline-block;
+  color:  #b17a7a;
   color:  #CA9E6A;
   background-color: transparent;
   text-transform: uppercase;
@@ -9,11 +10,8 @@
   border-radius: 5px;
   border: 1px solid rgba(0,0,0,0.3);
   border-bottom-width: 3px;
-
 }
-
 .btn-yours:hover {
-
     border-color: rgba(0,0,0,0.5);
     text-decoration: none;
     border: 1px solid #CBA06A;

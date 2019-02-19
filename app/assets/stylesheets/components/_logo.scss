@@ -8,6 +8,9 @@
   justify-content: center;
 }
 
+
+
+
 .logo{
 
  border: 2px solid #CBA06A;
@@ -43,4 +46,46 @@ letter-spacing: 0.08em;
 color: #BEA261;
 }
 
+}
+
+
+@media all and (min-width: 480px) and (max-width: 767px) {
+  .logo{
+
+    border: 2px solid #CBA06A;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+    width: 400px;
+    height: 100px;
+    margin-left: 14px;
+    margin-top: -97px;
+    padding-bottom: 28px;
+
+
+    h3 {
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 1px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #CBA06A;
+
+    }
+    h1 {
+
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    font-size: 42px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #BEA261;
+    }
+  }
 }
