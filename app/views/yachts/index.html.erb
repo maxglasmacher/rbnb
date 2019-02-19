@@ -1,0 +1,12 @@
+<h1>Yachts list</h1>
+<ul>
+  <% @yachts.each do |yacht| %>
+    <li>
+      <%= yacht.name %>
+      <%= yacht.description %>
+      <%= yacht.price_per_day %>
+      <%= yacht.photo %>
+      <%= yacht.user.email %>
+    </li>
+  <% end %>
+</ul>
