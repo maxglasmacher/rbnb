@@ -9,34 +9,37 @@
     </div>
   </div>
 
-  <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline">YACHTS</h1>
 
-<div class="container">
-  <!-- <div class="wrapper"> -->
-    <div class="row">
-       <% @yachts.each do |yacht| %>
-       <div class="col-xs-12  col-md-6 ">
-        <div class="big-card">
-        <div class="card" style="background-image: url('<%= cl_image_path yacht.photo, height: 500, crop: :fit %>')">
-          <div class="">
-            <div class="square">
-         <div class="card-body">
-              <h2>  <%= yacht.name %></h2>
 
-              <div class="info">
-                <h3><%= yacht.price_per_day %> $ per night</h3>
-                           <a href="<%= yacht_path(yacht) %>" class="btn-card">Details</a>
-              </div>
+<div class="cards-wrapper">
+  <div class="container">
+    <!-- <div class="wrapper"> -->
+      <div class="row">
+         <% @yachts.each do |yacht| %>
+         <div class="col-xs-12  col-md-6 ">
+          <div class="big-card">
+          <div class="card" style="background-image: url('<%= cl_image_path yacht.photo, height: 500, crop: :fit %>')">
+            <div class="">
+              <div class="square">
+           <div class="card-body">
+                <h2>  <%= yacht.name %></h2>
 
-         </div>
-         </div>
+                <div class="info">
+                  <h3><%= yacht.price_per_day %> $ per night</h3>
+                             <a href="<%= yacht_path(yacht) %>" class="btn-card">Details</a>
+                </div>
+
+           </div>
+           </div>
+            </div>
+          </div>
           </div>
         </div>
-        </div>
+      <%end %>
       </div>
-    <%end %>
-    </div>
-<!--   </div> -->
+  <!--   </div> -->
+  </div>
+  <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline">YACHTS</h1>
 </div>
 
 
