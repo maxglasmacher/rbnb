@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'design', to: 'pages#design'
 
 
-  resources :yachts, only: [ :show, :index]
+  resources :yachts, only: [ :show, :index, :new, :create ] do
+    resources :bookings, only: [ :new, :create ]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

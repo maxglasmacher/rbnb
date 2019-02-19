@@ -72,7 +72,7 @@ margin-top:40%;
 
 }
 
-.btn-card{
+.btn-card {
   position: relative;
   display: inline-block;
   color:  #CA9E6A;
@@ -85,15 +85,17 @@ margin-top:40%;
   border-radius: 5px;
   border: 1px solid rgba(0,0,0,0.4);
   border-bottom-width: 3px;
-}
-
-.btn-card:hover {
+  &:hover {
 
     border-color: rgba(0,0,0,0.01);
     text-decoration: none;
     border: 1px solid #CBA06A;
-    color:grey;
+    color: grey;
+
   }
+}
+
+
 
 .card-body {
 position:absolute;

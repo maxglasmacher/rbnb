@@ -7,6 +7,7 @@
       <%= yacht.price_per_day %>
       <%= cl_image_tag yacht.photo, height: 300, width: 400, crop: :fill %>
       <%= yacht.user.email %>
+      <%= link_to "Details", yacht_path(yacht) %>
     </li>
   <% end %>
 </ul>

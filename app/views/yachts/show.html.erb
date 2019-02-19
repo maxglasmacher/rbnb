@@ -1,0 +1,8 @@
+<h1>Welcome aboard on the <%= @yacht.name %></h1>
+  <%= @yacht.name %>
+  <%= @yacht.description %>
+  <%= @yacht.price_per_day %>
+  <%= cl_image_tag @yacht.photo, height: 300, width: 400, crop: :fill %>
+  <%= @yacht.user.email %>
+<%= link_to "Back to list", yachts_path %>
+
