@@ -5,7 +5,7 @@
       <%= yacht.name %>
       <%= yacht.description %>
       <%= yacht.price_per_day %>
-      <%= yacht.photo %>
+      <%= cl_image_tag yacht.photo, height: 300, width: 400, crop: :fill %>
       <%= yacht.user.email %>
     </li>
   <% end %>
