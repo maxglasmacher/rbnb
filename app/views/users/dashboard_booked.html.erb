@@ -1,0 +1,11 @@
+<h1>your booked trips</h1>
+<% @bookings.each do |trip| %>
+  <%= trip.booking_date %>
+  <%= trip.yacht.name %>
+  <%= trip.yacht.description %>
+  <%= trip.yacht.price_per_day %>
+  <%= trip.yacht.photo %>
+  <%= link_to "Edit booking", edit_yacht_booking_path(trip.yacht, trip) %>
+  <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
+<% end %>
+
