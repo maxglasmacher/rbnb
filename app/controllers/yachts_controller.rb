@@ -7,6 +7,9 @@ class YachtsController < ApplicationController
   end
 
   def show
+
+    @booking = Booking.new
+
       @yacht = set_yacht
 
       @marker = [{lng: @yacht.longitude,

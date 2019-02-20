@@ -11,7 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2019_02_20_123012) do
+ActiveRecord::Schema.define(version: 2019_02_20_143457) do
+
+
+
+
 
 
   # These are extensions that must be enabled in order to support this database
@@ -22,7 +26,8 @@ ActiveRecord::Schema.define(version: 2019_02_20_123012) do
     t.bigint "yacht_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "booking_date"
+    t.date "booking_start"
+    t.date "booking_end"
     t.index ["user_id"], name: "index_bookings_on_user_id"
     t.index ["yacht_id"], name: "index_bookings_on_yacht_id"
   end
