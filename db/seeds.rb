@@ -18,7 +18,8 @@ puts 'Creating 10 fake yachts/users...'
   yacht = Yacht.new(
     name: Faker::Name.name,
     description: Faker::GreekPhilosophers.quote,
-    price_per_day: rand(1_000..10_000)
+    price_per_day: rand(1_000..10_000),
+    address:Faker::Address.street_address
   )
   yacht.remote_photo_url = url_yacht
   yacht.user = user
