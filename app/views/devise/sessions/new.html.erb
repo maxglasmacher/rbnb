@@ -1,8 +1,9 @@
-<h2 class="text-center logging-in">Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<main>
+<div id="container" class="formform">
+<h2 class="text-center logging-in form">Log in</h2>
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-4 col-xs-offset-3">
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
                     required: false,
@@ -12,15 +13,21 @@
                     required: false,
                     input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </div>
+
 
       <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Log in", :class => "btn-yours button-center" %>
       </div>
-        </div>
     </div>
 <% end %>
+        </div>
+    </div>
 <div class="text-center">
   <%= render "devise/shared/links" %>
 </div>
+</div>
+</main>
+
+
+
 
