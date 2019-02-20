@@ -1,6 +1,6 @@
 <h1>your booked trips</h1>
 <% @bookings.each do |trip| %>
-  <%= trip.date %>
+  <%= trip.booking_date %>
   <%= trip.yacht.name %>
   <%= trip.yacht.description %>
   <%= trip.yacht.price_per_day %>
