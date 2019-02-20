@@ -1,8 +1,9 @@
 .yacht-header-design {
-  position: absolute;
+  // position: absolute;
+  position: sticky !important;
   width: 349px;
   height: 47px;
-  left: 357px;
+  left: 0px;
   top: 970px;
 
   font-family: Josefin Sans;
@@ -42,7 +43,7 @@
 .cards-wrapper {
   position: relative;
   h1 {
-    top: 10px;
+    top: 100px;
     left: 60px;
   }
 }
