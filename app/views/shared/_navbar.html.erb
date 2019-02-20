@@ -11,8 +11,8 @@
 
       <!-- Links when logged in -->
       <%= link_to "Host", new_yacht_path , class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My posts", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My trips", dashboard_booked_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My posts", dashboard_posts_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

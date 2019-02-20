@@ -17,6 +17,8 @@
        <% @yachts.each do |yacht| %>
        <div class="col-xs-12  col-md-6 ">
         <div class="big-card">
+
+      <% if yacht.photo.present? %>
         <div class="card" style="background-image: url('<%= cl_image_path yacht.photo, height: 500, crop: :fit %>')">
           <div class="">
             <div class="square">
@@ -32,6 +34,25 @@
          </div>
           </div>
         </div>
+      <% else %>
+        <div class="card" style="background-image: url('<%= image_path "yachtdefault.jpg", height: 500, crop: :fit %>')">
+          <div class="">
+            <div class="square">
+         <div class="card-body">
+              <h2>  <%= yacht.name %></h2>
+
+              <div class="info">
+                <h3><%= yacht.price_per_day %> $ per night</h3>
+                           <a href="<%= yacht_path(yacht) %>" class="btn-card">Details</a>
+              </div>
+
+         </div>
+         </div>
+          </div>
+        </div>
+      <% end %>
+
+
         </div>
       </div>
     <%end %>

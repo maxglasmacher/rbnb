@@ -2,9 +2,15 @@
   <%= @yacht.name %>
   <%= @yacht.description %>
   <%= @yacht.price_per_day %>
-  <%= cl_image_tag @yacht.photo, height: 300, width: 400, crop: :fill %>
+  <% if @yacht.photo.present? %>
+    <%= cl_image_tag @yacht.photo, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <%= image_tag "yachtdefault", alt: "alttext" %>
+  <% end %>
   <%= @yacht.user.email %>
+
 <%= link_to "Back to list", yachts_path %>
+<%= link_to "Book your cruise", new_yacht_booking_path(@yacht) %>
 
 <% if policy(@yacht).edit? %>
   <%= link_to "Edit", edit_yacht_path(@yacht) %>
