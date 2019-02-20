@@ -7,7 +7,15 @@ class YachtsController < ApplicationController
   end
 
   def show
+
     @booking = Booking.new
+
+      @yacht = set_yacht
+
+      @marker = [{lng: @yacht.longitude,
+        lat: @yacht.latitude,infoWindow: render_to_string(partial: "infowindow", locals: { yacht: @yacht }), image_url: helpers.asset_url('ancnhor.png')}]
+
+
   end
 
   def new
