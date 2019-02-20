@@ -1,4 +1,115 @@
-.logging-in {
-  font-family: $signup-font;
-  font-size: 60px;
+
+.background-form {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1504370962076-2292743c515e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
+  fixed no-repeat;
+  background-size: cover;
 }
+.background-form-signup{
+    height: 100vh;
+  background: url("https://images.unsplash.com/photo-1504370962076-2292743c515e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
+  fixed no-repeat;
+  background-size: cover;
+}
+.logging-in{
+      position: relative;
+}
+#container {
+  width: 350px;
+  height: 500px;
+  background: inherit;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -175px;
+  margin-top: -250px;
+  border-radius: 8px;
+}
+#container:before {
+  width: 400px;
+  height: 550px;
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.2);
+  filter: blur(10px);
+
+}
+
+
+.form-inputs{
+  padding-bottom: 20px;
+  width:200px;
+  border-color: grey;
+
+
+
+}
+.form-inputs :hover{
+ border-color: #CBA06A;
+
+}
+
+// .form-actions{
+//   color:  #CA9E6A;
+//   background-color: transparent;
+//   text-transform: uppercase;
+//   letter-spacing: 2px;
+//   font-size: 12px;
+//   padding: 10px 30px;
+//   border-radius: 5px;
+//   border-bottom-width: 3px;
+//   margin-top:-196px;
+// }
+// .form-actions {
+//     border-color: rgba(0,0,0,0.5);
+//     text-decoration: none;
+//     border: 1px solid #CBA06A;
+//     color:grey;
+//   }
+.text-center a {
+  position:relative;
+  text-decoration:none !important;
+  color:white;
+}
+
+.formform {
+  .form-control {
+    border: 0px solid transparent;
+    background-color: transparent;
+    box-shadow: 0px 0.1px 0rem rgba(203, 160, 106, 0.8);
+    border-bottom: 1px solid  rgba(203, 160, 106, 0.7);
+    border-top: 1px solid rgba(203, 160, 106, 0.7) !important;
+    border-radius: 0px;
+
+    &:focus {
+    box-shadow: 0px 0.1px 0rem rgba(203, 160, 106, 0.8);
+    border-bottom: 1px solid  #CBA06A;
+    border-top: 1px solid #CBA06A;
+    border-radius: 0px;
+    }
+  }
+  label {
+    margin-bottom: 16px;
+      color:black;
+      opacity:0.4;
+
+  }
+  .form-inputs {
+    margin-top: 20px;
+  }
+  .form-actions {
+    text-align: center;
+    margin: 0 auto;
+  }
+  h2{
+    color:black;
+    opacity:0.6;
+  }
+}
+

@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_yacht
-  before_action :set_booking, only: [ :edit, :update, :destroy]
+  before_action :set_booking, only: [ :edit, :update, :destroy ]
 
   def new
     @booking = Booking.new
@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to root_path
+      redirect_to dashboard_booked_path(current_user)
     else
       render :new
     end
@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
   def update
     @booking.update(booking_params)
     if @booking.save
-      redirect_to root_path
+      redirect_to dashboard_booked_path(current_user)
     else
       render :edit
     end
@@ -33,13 +33,13 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to root_path
+    redirect_to dashboard_booked_path(current_user)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:booking_date)
+    params.require(:booking).permit(:booking_start, :booking_end)
   end
 
   def set_booking
