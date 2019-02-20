@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_yacht
-  before_action :set_booking, only: [ :edit, :update, :destroy]
+  before_action :set_booking, only: [ :edit, :update, :destroy ]
 
   def new
     @booking = Booking.new
