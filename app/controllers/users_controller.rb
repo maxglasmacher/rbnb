@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
-  def index
+  before_action :set_user, only: [ :dashboard_posts, :dashboard_booked ]
 
+  def dashboard_posts
+    @hosted = @user.yachts
+  end
+
+  def dashboard_booked
+    @bookings = @user.bookings
   end
 
   private

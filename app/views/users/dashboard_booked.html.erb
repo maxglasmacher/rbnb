@@ -1,0 +1,8 @@
+<h1>your booked trips</h1>
+<% @bookings.each do |trip| %>
+  <%= trip.date %>
+  <%= trip.yacht.name %>
+  <%= trip.yacht.description %>
+  <%= trip.yacht.price_per_day %>
+  <%= trip.yacht.photo %>
+<% end %>
