@@ -28,7 +28,7 @@ class YachtsController < ApplicationController
     @yacht.user = current_user
     authorize @yacht
     if @yacht.save
-      redirect_to yacht_path(@yacht)
+      redirect_to dashboard_posts_path(current_user)
     else
       render :new
     end

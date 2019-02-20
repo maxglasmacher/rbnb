@@ -1,14 +1,58 @@
-<h1>your booked trips</h1>
-<% @bookings.each do |trip| %>
-  <%= trip.booking_start.strftime("%b %-d, %Y") %>
-  <%= trip.booking_end.strftime("%b %-d, %Y") %>
-  <%= trip.yacht.name %>
-  <%= trip.yacht.description %>
-  <%= trip.yacht.price_per_day %>
-  <%= trip.yacht.photo %>
-  <%= link_to "Edit booking", edit_yacht_booking_path(trip.yacht, trip) %>
-  <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
-<% end %>
+<div class="cards-wrapper">
+  <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline">TRIPS</h1>
+  <div class="container">
+    <!-- <div class="wrapper"> -->
+      <div class="row">
+         <% @bookings.each do |trip| %>
+         <div class="col-xs-12  col-md-6 ">
+          <div class="big-card">
+          <% if trip.yacht.photo.present? %>
+          <div class="card" style="background-image: url('<%= cl_image_path trip.yacht.photo, height: 500, crop: :fit %>')">
+            <div class="">
+              <div class="square">
+           <div class="card-body">
+                <h2>  <%= trip.yacht.name %></h2>
+                <h6>Starting <%= trip.booking_start.strftime("%b %-d, %Y") %> until <%= trip.booking_end.strftime("%b %-d, %Y") %></h6>
+
+                <div class="info">
+                  <h3><%= trip.yacht.price_per_day %> $ per night</h3>
+                  <h4><%= trip.yacht.description %></h4>
+                  <%= link_to "Edit booking", edit_yacht_booking_path(trip.yacht, trip) %>
+                  <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
+                </div>
+
+           </div>
+           </div>
+            </div>
+          </div>
+          <% else %>
+           <div class="card" style="background-image: url('<%= image_path "yachtdefault.jpg", height: 500, crop: :fit %>')">
+            <div class="">
+              <div class="square">
+           <div class="card-body">
+                <h2>  <%= trip.yacht.name %></h2>
+                <%= trip.booking_start.strftime("%b %-d, %Y") %>
+                <%= trip.booking_end.strftime("%b %-d, %Y") %>
+                <div class="info">
+                  <h3><%= trip.yacht.price_per_day %> $ per night</h3>
+                  <h4><%= trip.yacht.description %></h4>
+                  <%= link_to "Edit booking", edit_yacht_booking_path(trip.yacht, trip) %>
+                  <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
+                </div>
+
+           </div>
+           </div>
+            </div>
+          </div>
+          <% end %>
+          </div>
+        </div>
+      <%end %>
+
+      </div>
+  <!--   </div> -->
+  </div>
+
 
 
 
