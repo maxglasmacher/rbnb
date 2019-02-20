@@ -5,4 +5,7 @@
   <%= trip.yacht.description %>
   <%= trip.yacht.price_per_day %>
   <%= trip.yacht.photo %>
+  <%= link_to "Edit booking", edit_yacht_booking_path(trip.yacht, trip) %>
+  <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
 <% end %>
+
