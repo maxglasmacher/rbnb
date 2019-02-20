@@ -49,7 +49,7 @@ class YachtsController < ApplicationController
 
   def destroy
     @yacht.destroy
-    redirect_to yachts_path
+    redirect_to dashboard_posts_path(current_user)
   end
 
   private
