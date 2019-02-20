@@ -10,7 +10,6 @@
   <%= @yacht.user.email %>
 
 <%= link_to "Back to list", yachts_path %>
-<%= link_to "Book your cruise", new_yacht_booking_path(@yacht) %>
 
 <% if policy(@yacht).edit? %>
   <%= link_to "Edit", edit_yacht_path(@yacht) %>
@@ -18,4 +17,6 @@
 <% if policy(@yacht).destroy? %>
   <%= link_to "Delete", yacht_path(@yacht), method: "delete" %>
 <% end %>
+
+<%= render 'bookings/new' %>
 
