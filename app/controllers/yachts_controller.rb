@@ -3,19 +3,19 @@ class YachtsController < ApplicationController
   before_action :set_yacht, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @yachts = policy_scope(Yacht)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      @yachts = policy_scope(Yacht).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @yachts = policy_scope(Yacht)
+    end
   end
 
   def show
-
     @booking = Booking.new
-
-      @yacht = set_yacht
-
-      @marker = [{lng: @yacht.longitude,
-        lat: @yacht.latitude,infoWindow: render_to_string(partial: "infowindow", locals: { yacht: @yacht }), image_url: helpers.asset_url('ancnhor.png')}]
-
-
+    @yacht = set_yacht
+    @marker = [{lng: @yacht.longitude,
+    lat: @yacht.latitude,infoWindow: render_to_string(partial: "infowindow", locals: { yacht: @yacht }), image_url: helpers.asset_url('ancnhor.png')}]
   end
 
   def new
@@ -60,6 +60,6 @@ class YachtsController < ApplicationController
   end
 
   def yacht_params
-    params.require(:yacht).permit(:name, :description, :price_per_day, :photo)
+    params.require(:yacht).permit(:name, :description, :price_per_day, :photo, :address)
   end
 end

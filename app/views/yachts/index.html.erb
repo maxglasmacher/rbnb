@@ -9,7 +9,13 @@
     </div>
   </div>
 
-
+<%= form_tag yachts_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your yacht"
+  %>
+<% end %>
 
 <div class="cards-wrapper">
   <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline">YACHTS</h1>
