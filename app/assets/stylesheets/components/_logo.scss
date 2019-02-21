@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 
@@ -89,3 +90,32 @@ color: #BEA261;
     }
   }
 }
+
+.button-discover {
+  font-family: Josefin Sans;
+  display: flex;
+  align-items: center;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 30px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: .3s;
+  padding: 20px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    border: 2px solid white;
+    text-decoration: none;
+    color: white;
+  }
+  .text {
+    padding-top: 10px;
+    text-decoration: none;
+    color: white;
+
+  }
+}
+
