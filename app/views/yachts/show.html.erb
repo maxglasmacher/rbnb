@@ -26,24 +26,29 @@
     <span>Dolor velit ad quae totam, perferendis cupiditate ipsa laborum ab mollitia unde quidem sunt est voluptas, rem repudiandae praesentium. Voluptates est explicabo numquam beatae deserunt sit vero et a delectus!</span>
     <span>Sunt necessitatibus omnis, expedita nulla sequi, voluptatibus in optio, illum atque reprehenderit et maxime eos hic quisquam delectus, fugit repellat sed. Debitis ducimus esse, earum tempora sunt accusamus dolorem deserunt.</span>
     <span>Distinctio perspiciatis laudantium commodi ipsa, recusandae earum voluptates, magnam. Unde, labore possimus, dolorem atque ipsam totam doloribus iusto error enim vitae blanditiis soluta obcaecati reprehenderit veritatis repellendus recusandae dolorum! Vel!</span></p>
+    <p><%= @yacht.description %></p>
     <p class="line-break margin-top-10"></p>
     <p class="margin-top-10">
-  <%= @yacht.description %>
-  <%= @yacht.price_per_day %>
-  <%= @yacht.user.email %></p>
-  <%= link_to "Back to list", yachts_path %>
-  <% if policy(@yacht).edit? %>
+  <p><%= @yacht.price_per_day %>$</p>
+
+ <p>Contact: <%= @yacht.user.email %></p>
+ </p>
+<p><%= link_to "Back", yachts_path, class: 'yacht-link' %></p>  <% if policy(@yacht).edit? %>
   <%= link_to "Edit", edit_yacht_path(@yacht) %>
 <% end %>
 <% if policy(@yacht).destroy? %>
   <%= link_to "Delete", yacht_path(@yacht), method: "delete" %>
 <% end %>
-<%= link_to "Add review", new_yacht_review_path(@yacht) %>
-<%= render "reviews/index" %>
-  </div>
+<div class="review-border">
+  <%= render "reviews/index" %>
+<% if @yacht.reviews %>
+<a href="<%= new_yacht_review_path(@yacht) %>" class="btn-card shift-up-added-review"  >Share your experience with us</a>
+<% else %>
+<a href="<%= new_yacht_review_path(@yacht) %>" class="btn-card shift-up"  >Share your experience with us</a>
+<% end %>
+</div>
+    </div>
 
-
-<%= link_to "Share your experience with us", new_yacht_review_path(@yacht) %>
 
 </section>
 
