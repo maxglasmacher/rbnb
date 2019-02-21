@@ -6,7 +6,7 @@
   background-size: cover;
 }
 .background-form-signup{
-    height: 100vh;
+  height: 100vh;
   background: url("https://images.unsplash.com/photo-1504370962076-2292743c515e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
   fixed no-repeat;
   background-size: cover;
@@ -168,31 +168,49 @@
 .background-form-booking{
   height: 50vh;
   width:50vw;
-  background:  linear-gradient(-225deg, rgba(0,101,168,0.1) 0%, rgba(0,36,61,0.6) 50%),url("https://images.unsplash.com/photo-1522850261776-bea0c5622425?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60")
+  background:linear-gradient(-225deg, rgba(225,225,225,0.3) 0%, rgba(225,225,225,0.5) 10%), url("https://images.unsplash.com/photo-1504370962076-2292743c515e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
   fixed no-repeat;
   background-size: cover;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+
+}
+
+.formbooking {
+  position: relative;
 }
 
 #container-form{
-  width: 250px;
-  height: 445px;
+  width: 300px;
+  height: 420px;
   background: inherit;
   box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.2);
   overflow: hidden;
-
-
-
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
 }
+
+.form-inputs-booking{
+    margin: 118px;
+}
+
 #container-form:before {
- width: 250px;
-  height: 445px;
+  width: 300px;
+  height: 420px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   content: "";
-   filter: blur(10px);
   background: inherit;
-  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 200px rgba(255,255,255, 0.2);
+  -webkit-filter: blur(10px);
   filter: blur(10px);
+  border-radius: 8px;
+  z-index: -10;
 
 }

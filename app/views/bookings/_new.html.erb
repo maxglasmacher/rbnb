@@ -1,7 +1,10 @@
-
-<%= simple_form_for([@yacht, @booking]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :booking_start, as: :string, required: false, input_html: { id: "range_start" } %>
-  <%= f.input :booking_end, as: :string, required: false, input_html: { id: "range_end" } %>
-<%= f.button :submit, class: "btn-yours button-center" %>
-<% end %>
+<div class="background-form-booking">
+  <div id="container-form" class="formbooking" >
+  <%= simple_form_for([@yacht, @booking]) do |f| %>
+    <div div class="form-inputs-booking"><%= f.error_notification %>
+      <%= f.input :booking_start, as: :string, required: false, input_html: { id: "range_start" } %>
+      <%= f.input :booking_end, as: :string, required: false, input_html: { id: "range_end" } %>
+      <%= f.button :submit, class: "btn-yours button-center" %></div>
+  <% end %>
+  </div>
+</div>

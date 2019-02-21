@@ -38,20 +38,21 @@
 <% if policy(@yacht).destroy? %>
   <%= link_to "Delete", yacht_path(@yacht), method: "delete" %>
 <% end %>
+<%= link_to "Add review", new_yacht_review_path(@yacht) %>
+<%= render "reviews/index" %>
   </div>
 
+
 <%= link_to "Share your experience with us", new_yacht_review_path(@yacht) %>
+
 </section>
-<%= render "reviews/index" %>
 
 
 <section class="flex-show">
 
-<div class=" background-form-booking">
-  <div id="container-form" class="formbooking" >
+
   <%= render 'bookings/new' %>
-  </div>
-</div>
+
 <div
   id="map" class="parallax-two"
   style="
