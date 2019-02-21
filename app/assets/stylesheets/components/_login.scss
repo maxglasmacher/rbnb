@@ -55,23 +55,6 @@
 
 }
 
-// .form-actions{
-//   color:  #CA9E6A;
-//   background-color: transparent;
-//   text-transform: uppercase;
-//   letter-spacing: 2px;
-//   font-size: 12px;
-//   padding: 10px 30px;
-//   border-radius: 5px;
-//   border-bottom-width: 3px;
-//   margin-top:-196px;
-// }
-// .form-actions {
-//     border-color: rgba(0,0,0,0.5);
-//     text-decoration: none;
-//     border: 1px solid #CBA06A;
-//     color:grey;
-//   }
 .text-center a {
   position:relative;
   text-decoration:none !important;
@@ -113,3 +96,72 @@
   }
 }
 
+
+.formbooking {
+  padding-right:10px;
+  .form-control {
+    border: 0px solid transparent;
+    background-color: transparent;
+    box-shadow: 0px 0.1px 0rem rgba(203, 160, 106, 0.8);
+    border-bottom: 1px solid  rgba(203, 160, 106, 0.7);
+    border-top: 1px solid rgba(203, 160, 106, 0.7) !important;
+    border-radius: 0px;
+
+    &:focus {
+    box-shadow: 0px 0.1px 0rem rgba(203, 160, 106, 0.8);
+    border-bottom: 1px solid  #CBA06A;
+    border-top: 1px solid #CBA06A;
+    border-radius: 0px;
+    }
+  }
+  label {
+    margin-bottom: 16px;
+      color:black;
+      opacity:0.4;
+
+  }
+  .form-inputs {
+    margin-top: 20px;
+  }
+  .form-actions {
+    text-align: center;
+    margin: 0 auto;
+  }
+  h2{
+    color:black;
+    opacity:0.6;
+  }
+}
+
+
+.background-form-booking{
+  height: 50vh;
+  width:50vw;
+  background:  linear-gradient(-225deg, rgba(0,101,168,0.1) 0%, rgba(0,36,61,0.6) 50%),url("https://images.unsplash.com/photo-1522850261776-bea0c5622425?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60")
+  fixed no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#container-form{
+  width: 250px;
+  height: 445px;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+
+
+
+}
+#container-form:before {
+ width: 250px;
+  height: 445px;
+  content: "";
+   filter: blur(10px);
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.2);
+  filter: blur(10px);
+
+}
