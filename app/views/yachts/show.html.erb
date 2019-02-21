@@ -5,28 +5,31 @@
   <div class="title">
        <h3>Welcome aboard on the</h3>
     <h1> <%= @yacht.name %></h1>
-
   </div>
 </section>
 
 <section>
-    <div class="parallax-one" style="background-image: url('<%= cl_image_path @yacht.photo %>');">
-      <h2><%= @yacht.name %></h2>
-    </div>
+    <% if @yacht.photo.present? %>
+      <div class="parallax-one" style="background-image: url('<%= cl_image_path @yacht.photo %>');">
+        <h2><%= @yacht.name %></h2>
+      </div>
+    <% else %>
+      <div class="parallax-one" style="background-image: url('<%= image_path "yachtdefault", alt: "alttext" %>');">
+       <h2><%= @yacht.name %></h2>
+      </div>
+    <% end %>
 </section>
 
 <section>
   <div class="block">
-    <p><span class="first-character sc">I</span></p>
+    <p><span class="first-character sc">I</span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum molestiae, ex doloremque ab veniam corporis autem necessitatibus odit, dolor voluptatum deserunt, qui deleniti, eos expedita molestias amet nesciunt. Deleniti, ea.</span>
+    <span>Dolor velit ad quae totam, perferendis cupiditate ipsa laborum ab mollitia unde quidem sunt est voluptas, rem repudiandae praesentium. Voluptates est explicabo numquam beatae deserunt sit vero et a delectus!</span>
+    <span>Sunt necessitatibus omnis, expedita nulla sequi, voluptatibus in optio, illum atque reprehenderit et maxime eos hic quisquam delectus, fugit repellat sed. Debitis ducimus esse, earum tempora sunt accusamus dolorem deserunt.</span>
+    <span>Distinctio perspiciatis laudantium commodi ipsa, recusandae earum voluptates, magnam. Unde, labore possimus, dolorem atque ipsam totam doloribus iusto error enim vitae blanditiis soluta obcaecati reprehenderit veritatis repellendus recusandae dolorum! Vel!</span></p>
     <p class="line-break margin-top-10"></p>
     <p class="margin-top-10">
   <%= @yacht.description %>
   <%= @yacht.price_per_day %>
-  <% if @yacht.photo.present? %>
-
-  <% else %>
-    <%= image_tag "yachtdefault", alt: "alttext" %>
-  <% end %>
   <%= @yacht.user.email %></p>
   <%= link_to "Back to list", yachts_path %>
   <% if policy(@yacht).edit? %>
@@ -35,23 +38,32 @@
 <% if policy(@yacht).destroy? %>
   <%= link_to "Delete", yacht_path(@yacht), method: "delete" %>
 <% end %>
-<%= render 'bookings/new' %>
   </div>
 </section>
 
 
-<section>
+<section class="flex-show">
+
+<div class=" background-form-booking">
+  <div id="container-form" class="formbooking" >
+  <%= render 'bookings/new' %>
+  </div>
+</div>
 <div
   id="map" class="parallax-two"
   style="
-  height: 100vh;"
+  height: 50vh;"
   data-markers="<%= @marker.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-</section>
-<div class="parallax-three" style="background-image: url('<%= cl_image_path @yacht.photo %>');">
-      <h2><%= @yacht.name %></h2>
 
+</section>
+     <% if @yacht.photo.present? %>
+        <div class="parallax-three" style="background-image: url('<%= cl_image_path @yacht.photo %>');">
+        <h2><%= @yacht.name %></h2>
+      <% else %>
+          <div class="parallax-three" style="background-image: url('<%= image_path "yachtdefault", alt: "alttext" %>');">
+        <h2><%= @yacht.name %></h2>
     </div>
+    <% end %>
 </section>
-

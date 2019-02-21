@@ -1,6 +1,7 @@
+
 <%= simple_form_for([@yacht, @booking]) do |f| %>
   <%= f.error_notification %>
   <%= f.input :booking_start, as: :string, required: false, input_html: { id: "range_start" } %>
   <%= f.input :booking_end, as: :string, required: false, input_html: { id: "range_end" } %>
-<%= f.button :submit, class: "btn-primary" %>
+<%= f.button :submit, class: "btn-yours button-center" %>
 <% end %>
