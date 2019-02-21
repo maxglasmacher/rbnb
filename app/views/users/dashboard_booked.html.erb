@@ -52,6 +52,13 @@
       </div>
   <!--   </div> -->
   </div>
+<h1>You have <%= @bookings.count %> bookings</h1>
+<% @bookings.each do |booking| %>
+<h3>Cruise duration: <%= (booking.booking_start - booking.booking_end).abs.to_i %> days</h3>
+<h6>Starting <%= booking.booking_start.strftime("%b %-d, %Y") %> until <%= booking.booking_end.strftime("%b %-d, %Y") %></h6>
+<h3>Total price: <%= booking.yacht.price_per_day * (booking.booking_start - booking.booking_end).abs.to_i %>$</h3>
+<div class="btn btn-warning">Checkout</div>
+<% end %>
 
 
 
