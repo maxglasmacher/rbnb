@@ -37,7 +37,10 @@
 <% end %>
 <%= render 'bookings/new' %>
   </div>
+
+<%= link_to "Add review", new_yacht_review_path(@yacht) %>
 </section>
+<%= render "reviews/index" %>
 
 
 <section>
