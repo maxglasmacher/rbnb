@@ -1,0 +1,10 @@
+<h1><%= @yacht.name %>'s reviews</h1>
+<% if @yacht.reviews.present? %>
+  <% @yacht.reviews.each do |review| %>
+    <%= review.content %>
+    <%= "*" * review.rating %>
+    <%= link_to "Delete review", yacht_review_path(@yacht, review), method:"delete" %>
+  <% end %>
+<% else %>
+  <h3>no reviews yet</h3>
+<% end %>
