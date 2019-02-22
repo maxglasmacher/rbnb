@@ -39,10 +39,10 @@
 <% end %>
 <div class="review-border">
   <%= render "reviews/index" %>
-<% if @yacht.reviews %>
-<a href="<%= new_yacht_review_path(@yacht) %>" class="btn-card shift-up-added-review"  >Share your experience with us</a>
+<% if @yacht.reviews.present? %>
+  <a href="<%= new_yacht_review_path(@yacht) %>" class="btn-card shift-up-added-review"  >Share your experience with us</a>
 <% else %>
-<a href="<%= new_yacht_review_path(@yacht) %>" class="btn-card shift-up"  >Share your experience with us</a>
+  <a href="<%= new_yacht_review_path(@yacht) %>" class="btn-card shift-up"  >Share your experience with us</a>
 <% end %>
 </div>
     </div>
