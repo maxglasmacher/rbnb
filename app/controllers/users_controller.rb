@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [ :dashboard_posts, :dashboard_booked ]
+  before_action :set_user, only: [ :dashboard ]
 
-  def dashboard_posts
+  def dashboard
     @hosted = @user.yachts
-  end
-
-  def dashboard_booked
     @bookings = @user.bookings
   end
 
