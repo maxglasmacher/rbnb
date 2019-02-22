@@ -1,32 +1,4 @@
-
-
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.5) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1444665317802-08aa1d89c10c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
-    <div class="logo">
-      <div>
-        <h3>N˚1</h3>
-        <h1>Yacht Sqaure</h1>
-      </div>
-    </div>
-  </div>
-
-<div class="container search-form-nice">
-  <%= form_tag yachts_path, remote: true, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control", id:"search-input",
-      placeholder: "Find your yacht"
-    %>
-  <% end %>
-</div>
-
-<div class="cards-wrapper">
-  <div id="sticky-header">
-    <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline"><strong>Y</strong>ACHTS</h1>
-  </div>
-  <div class="container">
-    <!-- <div class="wrapper"> -->
-      <div class="row" id="yacht-cards">
-         <% @yachts.each do |yacht| %>
+<% @yachts.each do |yacht| %>
            <div class="col-xs-12  col-md-6 ">
              <div class="big-card">
                <% if yacht.photo.present? %>
@@ -61,12 +33,3 @@
                </div>
              </div>
          <%end %>
-      </div>
-  <!--   </div> -->
-  </div>
-</div>
-
-
-  </div>
-</div>
-

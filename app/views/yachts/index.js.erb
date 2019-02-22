@@ -1,0 +1,14 @@
+function emptyForm() {
+  const input = document.getElementById('search-input');
+  input.value = "";
+}
+
+function showYachts(resultsHTML) {
+  const yachts = document.getElementById('yacht-cards');
+  yachts.innerHTML = resultsHTML;
+}
+
+
+emptyForm()
+showYachts('<%= j render "list", yachts: @yachts %>')
+
