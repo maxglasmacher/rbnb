@@ -119,6 +119,9 @@
       <%end %>
       </div>
 
+
+
+
 <h2>Checkout:</h2>
 <% @bookings.each do |booking| %>
 <p>Cruise duration: <%= (booking.booking_start - booking.booking_end).abs.to_i %> days</p>
@@ -127,6 +130,7 @@
 <div class="btn btn-warning">Checkout</div>
 <% end %>
 </div>
+
 
 
 
