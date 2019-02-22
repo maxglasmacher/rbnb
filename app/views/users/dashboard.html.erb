@@ -1,125 +1,132 @@
-<!-- dashboard hosted -->
-<h1>Posts:</h1>
-<div class="cards-wrapper">
-  <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline">POSTS</h1>
-  <div class="container">
-    <!-- <div class="wrapper"> -->
-      <div class="row">
-         <% @hosted.each do |post| %>
-         <div class="col-xs-12  col-md-6 ">
-          <div class="big-card">
-          <% if post.photo.present? %>
-          <div class="card" style="background-image: url('<%= cl_image_path post.photo, height: 500, crop: :fit %>')">
-            <div class="">
-              <div class="square">
-           <div class="card-body">
-                <h2>  <%= post.name %></h2>
+
+
+<div id="parallax-world-of-ugg">
 
                 <div class="info">
                   <h3><%= post.price_per_day %> $ per night</h3>
-                  <h4><%= post.description %></h4>
+                
                   <%= link_to "delete", yacht_path(post), method:"delete"  %>
                 </div>
 
-           </div>
-           </div>
-            </div>
-          </div>
-          <% else %>
-           <div class="card" style="background-image: url('<%= image_path "yachtdefault.jpg", height: 500, crop: :fit %>')">
-            <div class="">
-              <div class="square">
-           <div class="card-body">
-                <h2>  <%= post.name %></h2>
 
-                <div class="info">
-                  <h3><%= post.price_per_day %> $ per night</h3>
-                  <h4><%= post.description %></h4>
-                  <%= link_to "delete", yacht_path(post), method:"delete"  %>
-                </div>
-
-           </div>
-           </div>
-            </div>
-          </div>
-          <% end %>
-          </div>
-        </div>
-      <%end %>
-
-      </div>
-  <!--   </div> -->
+<section>
+  <div class="title">
+       <h3>Hi </h3>
+    <h1><%= current_user.email%></h1>
   </div>
+</section>
 
 
+<section>
 
-  <!-- dashboard_booked -->
+                <div class="info">
+                  <h3><%= post.price_per_day %> $ per night</h3>
+               
+                  <%= link_to "delete", yacht_path(post), method:"delete"  %>
+                </div>
 
-<h1>Booked:</h1>
 
-  <div class="cards-wrapper">
-  <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline">TRIPS</h1>
-  <div class="container">
+      <div class="parallax-one" style="background-image: url('https://images.unsplash.com/photo-1419032185395-8131e3576bbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');">
+       <h2>Your Posts</h2>
+      </div>
+
+</section> <!--section one-->
+
+<section>
+  <div class="block">
+      <div class="row row-dashboard">
+        <% @hosted.each do |post| %>
+          <div class="col-xs-12 col-md-6 ">
+            <div class="big-card-dashboard">
+              <% background_url = post.photo.present? ? cl_image_path(post.photo, height: 500, crop: :fit) :  image_path("yachtdefault.jpg") %>
+              <div class="card-dashboard" style="background-image: url('<%= background_url %>')">
+                <div class="">
+                  <div class="square-dashboard">
+                    <div class="card-body-dashboard">
+                      <p> <%= post.name %></p>
+                      <div class="info-dashboard">
+                        <p><%= post.price_per_day %> $ per night</p>
+                        <%= link_to "delete", yacht_path(post), method:"delete"  %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div> <!-- closing col -->
+        <%end %>
+      </div> <!-- closing row -->
+  </div> <!-- closing block -->
+
+</section>
+
+
+<section>
+
+      <div class="parallax-one" style="background-image: url('https://images.unsplash.com/photo-1435527173128-983b87201f4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60');">
+       <h2>Your Bookings<h2>
+      </div>
+
+<section>
+  <div class="title">
+       <h3>Ready </h3>
+    <h1>for your next vacation</h1>
+  </div>
+</section>
+</section> <!--section one-->
+<div class="block">
+<h1>You have <%= @bookings.count %> bookings</h1>
+
     <!-- <div class="wrapper"> -->
-      <div class="row">
+      <div class="row--dashboard">
          <% @bookings.each do |trip| %>
          <div class="col-xs-12  col-md-6 ">
-          <div class="big-card">
-          <% if trip.yacht.photo.present? %>
-          <div class="card" style="background-image: url('<%= cl_image_path trip.yacht.photo, height: 500, crop: :fit %>')">
-            <div class="">
-              <div class="square">
-           <div class="card-body">
-                <h2>  <%= trip.yacht.name %></h2>
-                <h6>Starting <%= trip.booking_start.strftime("%b %-d, %Y") %> until <%= trip.booking_end.strftime("%b %-d, %Y") %></h6>
-
-                <div class="info">
-                  <h3><%= trip.yacht.price_per_day %> $ per night</h3>
-                  <h4><%= trip.yacht.description %></h4>
-                  <%= link_to "Edit booking", edit_yacht_booking_path(trip.yacht, trip) %>
-                  <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
+          <div class="big-card-dashboard">
+            <% if trip.yacht.photo.present? %>
+              <div class="card-dashboard" style="background-image: url('<%= cl_image_path trip.yacht.photo, height: 500, crop: :fit %>')">
+                <div class="">
+                  <div class="square-dashboard">
+                    <div class="card-body-dashboard">
+                      <h1>  <%= trip.yacht.name %></h1>
+                      <h6>Starting <%= trip.booking_start.strftime("%b %-d, %Y") %> until <%= trip.booking_end.strftime("%b %-d, %Y") %></h6>
+                      <div class="info--dashboard">
+                        <h3><%= trip.yacht.price_per_day %> $ per night</h3>
+                        <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-           </div>
-           </div>
-            </div>
-          </div>
+              </div>
           <% else %>
-           <div class="card" style="background-image: url('<%= image_path "yachtdefault.jpg", height: 500, crop: :fit %>')">
+           <div class="card-dashboard" style="background-image: url('<%= image_path "yachtdefault.jpg", height: 500, crop: :fit %>')">
             <div class="">
-              <div class="square">
+              <div class="square-dashboard">
            <div class="card-body">
-                <h2>  <%= trip.yacht.name %></h2>
+                <h3>  <%= trip.yacht.name %></h3>
                 <%= trip.booking_start.strftime("%b %-d, %Y") %>
                 <%= trip.booking_end.strftime("%b %-d, %Y") %>
                 <div class="info">
-                  <h3><%= trip.yacht.price_per_day %> $ per night</h3>
-                  <h4><%= trip.yacht.description %></h4>
-                  <%= link_to "Edit booking", edit_yacht_booking_path(trip.yacht, trip) %>
+                  <p><%= trip.yacht.price_per_day %> $ per night</p>
+
                   <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
                 </div>
-
            </div>
            </div>
             </div>
           </div>
           <% end %>
           </div>
-        </div>
       <%end %>
-
       </div>
-  <!--   </div> -->
-  </div>
-<h1>You have <%= @bookings.count %> bookings</h1>
+
 <h2>Checkout:</h2>
 <% @bookings.each do |booking| %>
-<h3>Cruise duration: <%= (booking.booking_start - booking.booking_end).abs.to_i %> days</h3>
-<h6>Starting <%= booking.booking_start.strftime("%b %-d, %Y") %> until <%= booking.booking_end.strftime("%b %-d, %Y") %></h6>
-<h3>Total price: <%= booking.yacht.price_per_day * (booking.booking_start - booking.booking_end).abs.to_i %>$</h3>
+<p>Cruise duration: <%= (booking.booking_start - booking.booking_end).abs.to_i %> days</p>
+<p>Starting <%= booking.booking_start.strftime("%b %-d, %Y") %> until <%= booking.booking_end.strftime("%b %-d, %Y") %></p>
+<p>Total price: <%= booking.yacht.price_per_day * (booking.booking_start - booking.booking_end).abs.to_i %>$</p>
 <div class="btn btn-warning">Checkout</div>
 <% end %>
-
+</div>
 
 
 

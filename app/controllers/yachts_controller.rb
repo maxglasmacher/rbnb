@@ -32,7 +32,7 @@ class YachtsController < ApplicationController
     @yacht.user = current_user
     authorize @yacht
     if @yacht.save
-      redirect_to dashboard_posts_path(current_user)
+      redirect_to dashboard_path(current_user)
     else
       render :new
     end
@@ -53,7 +53,7 @@ class YachtsController < ApplicationController
 
   def destroy
     @yacht.destroy
-    redirect_to dashboard_posts_path(current_user)
+    redirect_to dashboard_path(current_user)
   end
 
   private
