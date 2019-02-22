@@ -1,6 +1,7 @@
 require "faker"
 
 Booking.delete_all
+Review.delete_all
 Yacht.delete_all
 User.delete_all
 
@@ -119,7 +120,7 @@ y5 = Yacht.new(name: "Al Said", description: "Probably the most stunning part of
   at all times. He is so fluffy! This yacht will meet all your extravagant tastes
   and desires, we can guarantee.",
   price_per_day: 270_000, address: "Lisbon")
-y5.remote_photo_url = "http://3.bp.blogspot.com/-HuKj4Ti9aB8/VCGk3jLP82I/AAAAAAAAA8U/8aEQYiuqVGk/s1600/m_4811173_AQ7CIwLGRlYd.jpeg"
+y5.remote_photo_url = "http://www.yachts123.com/wp-content/uploads/2013/01/beautiful-yacht.jpg"
 y5.user = max
 y5.save!
 puts "y6"

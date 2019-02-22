@@ -5,11 +5,7 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-  def dashboard_booked?
-    true
-  end
-
-  def dashboard_posts?
+  def dashboard?
     true
   end
 end
