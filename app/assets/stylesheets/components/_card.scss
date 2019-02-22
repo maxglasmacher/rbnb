@@ -68,10 +68,10 @@
 
 // }
 .card:hover .info {
-   background-color: rgba(0,0,0,0.1);
+   background-color: rgba(0,0,0,0.4);
   opacity: 1;
-  margin-top: -60px;
-  left: 50px;
+  margin-top: -40px;
+  left: 10px;
   // -webkit-transform: translateY(0px);
   //         transform: translateY(0px);
 }
@@ -129,13 +129,15 @@
 
   display: inline-block;
   color:  #CA9E6A;
-  background-color: transparent;
-  opacity:0.5;
+
+
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 10px;
   padding: 6px 9px;
   border-radius: 5px;
+
+background-color: rgba(1,1,1,0.5);
   border: 1px solid rgba(255,255,255,0.7);
   border-bottom-width: 3px;
 
@@ -146,11 +148,11 @@
 
 .btn-card:hover {
 
+background-color: rgba(225,225,225,0.3);
 
-    border-color: rgba(1,1,1,0.3);
     text-decoration: none;
     border: 1px solid #CBA06A;
-
+background-color: rgba(1,1,1,0.3);
     color:grey;
       opacity: 1;
   -webkit-transform: translateY(0px);
@@ -160,7 +162,7 @@
   }
 
 .btn-card.shift-up {
-  width: 228px;
+    width: 228px;
     margin-top: 7px;
     margin-left: auto;
     margin-right: auto;
@@ -173,9 +175,10 @@
 
 }
 
-.btn-card.shift-up-added-review{  width: 250px;
+.btn-card.shift-up-added-review{
+    width: 250px;
     width: 228px;
-    margin-top: 32px;
+    margin-top: 34px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -192,25 +195,26 @@
 
 
   h2{
-  font-family: Josefin Sans;
+  font-family: Oswald;
+
   font-weight:thin;
   margin-bottom: -20px;
     opacity: 0.9;
-        margin-top: 25px;
+    margin-top: 25px;
     margin-left: 26px;
     font-size: 32px;
     color:white;
     -webkit-text-stroke: 0.09px black;
   }
   h3 {
-    font-family:Josefin Sans;
+    font-family:Oswald;
     font-weight:light;
     color:white;
 
     font-size: 16px;
     opacity:0.9;
     padding-bottom: 150px;
-      padding-left: 136px;
+      padding-left: 30px;
 
 
   }

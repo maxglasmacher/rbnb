@@ -1,9 +1,14 @@
 <h1><%= @yacht.name %>'s reviews</h1>
 <% if @yacht.reviews.present? %>
   <% @yacht.reviews.each do |review| %>
-    <%= review.content %>
-    <%= "*" * review.rating %>
-    <%= link_to "Delete", yacht_review_path(@yacht, review), method:"delete" %>
+    <div class="yacht-review-container">
+      <p></p>
+      <p><%= review.content %></p>
+     <%= "*" * review.rating %>
+      <%= link_to yacht_review_path(@yacht, review), method:"delete", class: "review-delete-btn" do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </div>
   <% end %>
 <% else %>
   <h3>no reviews yet</h3>
