@@ -1,0 +1,40 @@
+      <div class="row--dashboard">
+         <% @bookings.each do |trip| %>
+         <div class="col-xs-12  col-md-6 ">
+          <div class="big-card-dashboard">
+            <% if trip.yacht.photo.present? %>
+              <div class="card-dashboard" style="background-image: url('<%= cl_image_path trip.yacht.photo, height: 500, crop: :fit %>')">
+                <div class="">
+                  <div class="square-dashboard">
+                    <div class="card-body-dashboard">
+                      <h1>  <%= trip.yacht.name %></h1>
+                      <h6>Starting <%= trip.booking_start.strftime("%b %-d, %Y") %> until <%= trip.booking_end.strftime("%b %-d, %Y") %></h6>
+                      <div class="info--dashboard">
+                        <h3><%= trip.yacht.price_per_day %> $ per night</h3>
+                        <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <% else %>
+           <div class="card-dashboard" style="background-image: url('<%= image_path "yachtdefault.jpg", height: 500, crop: :fit %>')">
+            <div class="">
+              <div class="square-dashboard">
+           <div class="card-body">
+                <h3>  <%= trip.yacht.name %></h3>
+                <%= trip.booking_start.strftime("%b %-d, %Y") %>
+                <%= trip.booking_end.strftime("%b %-d, %Y") %>
+                <div class="info">
+                  <p><%= trip.yacht.price_per_day %> $ per night</p>
+
+                  <%= link_to "Delete booking", yacht_booking_path(trip.yacht, trip), method:"delete" %>
+                </div>
+           </div>
+           </div>
+            </div>
+          </div>
+          <% end %>
+          </div>
+      <%end %>
+      </div>
