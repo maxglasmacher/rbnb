@@ -6,6 +6,10 @@ class YachtsController < ApplicationController
     if params[:query].present?
       sql_query = "name ILIKE :query OR address ILIKE :query"
       @yachts = policy_scope(Yacht).where(sql_query, query: "%#{params[:query]}%")
+      respond_to do |format|
+        format.html { redirect_to yachts_path }
+        format.js # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
       @yachts = policy_scope(Yacht)
     end
