@@ -1,5 +1,13 @@
 
+
 <div id="parallax-world-of-ugg">
+
+                <div class="info">
+                  <h3><%= post.price_per_day %> $ per night</h3>
+                
+                  <%= link_to "delete", yacht_path(post), method:"delete"  %>
+                </div>
+
 
 <section>
   <div class="title">
@@ -8,7 +16,15 @@
   </div>
 </section>
 
+
 <section>
+
+                <div class="info">
+                  <h3><%= post.price_per_day %> $ per night</h3>
+               
+                  <%= link_to "delete", yacht_path(post), method:"delete"  %>
+                </div>
+
 
       <div class="parallax-one" style="background-image: url('https://images.unsplash.com/photo-1419032185395-8131e3576bbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');">
        <h2>Your Posts</h2>
