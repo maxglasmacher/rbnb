@@ -1,22 +1,29 @@
 .yacht-header-design {
-  // position: absolute;
+  position: absolute;
 
   width: 349px;
   height: 47px;
-  left: 0px;
+  left: 1000px;
   top: 970px;
   font-family: Oswald;
-  font-weight: 200;
-  line-height: 47px;
-  font-size: 37px;
+  font-weight: 300;
+  line-height: 57px;
+  font-size: 32px;
   text-align: center;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.30em;
   text-indent: 5px;
-  padding-left:0;
-
+  padding-left:-90px;
   color: #DEDEDE;
-
   transform: rotate(-90deg);
+  strong{
+  font-size: 52px;
+  font-weight: 500px;
+  color:grey;
+  opacity: 0.5;
+  width: 349px;
+  letter-spacing: 0.1em;
+
+}
 }
 
 .yacht-header-longline {
@@ -25,25 +32,25 @@
   height: 0px;
   left: 418px;
   top: 616px;
-
   border: 1px solid #DEDEDE;
   transform: rotate(-90deg);
 }
 
 .yacht-header-shortline {
   position: absolute;
-  width: 10px;
+  width: 11px;
   height: 0px;
-  left: 413px;
-  top: 628px;
+  left: 213px;
+  top: 328px;
   border: 1px solid #DEDEDE;
 }
 
 .cards-wrapper {
   position: relative;
   h1 {
-    top: 100px;
-    left: 60px;
+       top: 164px;
+    left: 8px;
+
   }
 }
 
