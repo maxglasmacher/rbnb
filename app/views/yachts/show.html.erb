@@ -30,13 +30,8 @@
 
  <p>Contact: <%= @yacht.user.email %></p>
  </p>
-<p><%= link_to "Back", yachts_path, class: 'yacht-link' %></p>  <% if policy(@yacht).edit? %>
+<p><%= link_to "Back", yachts_path, class: 'yacht-link' %></p>
 
-  <%= link_to "Edit", edit_yacht_path(@yacht) %>
-<% end %>
-<% if policy(@yacht).destroy? %>
-  <%= link_to "Delete", yacht_path(@yacht), method: "delete" %>
-<% end %>
 <div class="review-border">
   <%= render "reviews/index" %>
 <% if @yacht.reviews.present? %>

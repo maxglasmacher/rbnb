@@ -9,16 +9,20 @@
     </div>
   </div>
 
-<%= form_tag yachts_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your yacht"
-  %>
-<% end %>
+<div class="container search-form-nice">
+  <%= form_tag yachts_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find your yacht"
+    %>
+  <% end %>
+</div>
 
 <div class="cards-wrapper">
-  <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline"><strong>Y</strong>ACHTS</h1>
+  <div id="sticky-header">
+    <h1 class="vertical-text yacht-header-design yacht-header-longline yacht-header-shortline"><strong>Y</strong>ACHTS</h1>
+  </div>
   <div class="container">
     <!-- <div class="wrapper"> -->
       <div class="row">

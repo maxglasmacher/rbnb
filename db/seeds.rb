@@ -9,6 +9,10 @@ puts 'Creating 2 users...'
 
 max = User.new(email: "max@gmail.com", password: "max12345")
 hana = User.new(email: "hana@gmail.com", password: "hana12345")
+max.remote_photo_url = "https://i.imgur.com/s2xRA1Z.jpg"
+hana.remote_photo_url = "https://i.imgur.com/aEctbqG.jpg"
+max.save!
+hana.save!
 
 puts 'Creating 10 fake yachts...'
 
